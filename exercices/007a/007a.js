@@ -5,10 +5,19 @@ let programRunning = true;
 let menuOptions = "";
 
 while (programRunning) {
-    menuOptions = parseInt(prompt(`Escolha uma das opções a seguir:
+    
+    let pacientsNames = "";
+    for (let i = 0; i < waitingList.length; i++) {
+        pacientsNames += `\n${(i+1)}º - ${waitingList[i]}`;
+    }
+
+    menuOptions = parseInt(prompt(`Lista de espera: ${pacientsNames}
+    
+    Escolha uma das opções a seguir:
     1. Adicionar Paciente
-    2. Consultar Paciente
-    3. Encerrar programa`));
+    2. Consultar Próximo Paciente
+    3. Encerrar programa
+    `));
 
     switch (menuOptions) {
         case 1:
@@ -25,7 +34,7 @@ while (programRunning) {
                 alert("Atenção: a lista de espera está vazia.");
             } else {
                 let consultedPacient = waitingList.shift();
-                alert(`${consultedPacient} pode entrar! O doutor te espera.`);
+                alert(`Paciente ${consultedPacient} foi consultado e removido da lista de espera.`);
             }
             break;
         case 3:

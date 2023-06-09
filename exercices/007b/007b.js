@@ -14,7 +14,7 @@ Escolha uma opção:
 switch(menuOptions) {
     case 1:
         let cardName = prompt("Qual nome da carta?");
-        if (cardName.length === 0 | cardName.trim().length === 0) {
+        if (cardName.length === 0 || cardName.trim().length === 0) {
             alert(`Inserção inválida.`);
         } else {
             deck.push(cardName);

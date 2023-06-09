@@ -22,7 +22,7 @@ while (programRunning) {
     switch (menuOptions) {
         case 1:
             let addPacient = prompt("Insira o nome do paciente:");
-            if (addPacient.length === 0 | addPacient.trim().length === 0) {
+            if (addPacient.length === 0 || addPacient.trim().length === 0) {
                 alert(`[ERRO] Inserção inválida.`);
             } else {
                 waitingList.push(addPacient);

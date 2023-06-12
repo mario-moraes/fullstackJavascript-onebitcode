@@ -2,6 +2,7 @@
 
 let programaRunning = true;
 let propertyLog = [];
+
 while (programaRunning) {
     let menuOptions = parseInt(prompt(`
     Quantidade de imóveis cadastrados: ${propertyLog.length}.
@@ -13,22 +14,23 @@ while (programaRunning) {
     
     switch(menuOptions) {
         case 1: 
-            let ownerName = prompt(`Insira o nome do proprietário:`);
-            let bedroomNumber = parseInt(prompt(`Insira a quantidade de quartos`));
-            let bathroomNumber = parseInt(prompt(`Insira a quantidade de banheiros:`));
-            let garageNumber = prompt(`O imóvel possui garagem? Sim ou Não.`)
+            let propertyRegister = {};
+
+            propertyRegister.ownerName = prompt(`Insira o nome do proprietário:`);
+            propertyRegister.bedroomNumber = parseInt(prompt(`Insira a quantidade de quartos`));
+            propertyRegister.bathroomNumber = parseInt(prompt(`Insira a quantidade de banheiros:`));
+            propertyRegister.garage = prompt(`O imóvel possui garagem? Sim ou Não.`);
             
-            let propertyRegister = {
-                name: ownerName,
-                bedrooms: bedroomNumber,
-                bathrooms: bathroomNumber,
-                garage: garageNumber
-            }
             propertyLog.push(propertyRegister);
             break
         case 2:
-            alert(`Os imóveis cadastrados até então:
-            ${propertyLog}`);
+            for (i = 0; i < propertyLog.length; i++) {
+                alert(`Imóvel ${i+1}:
+                Dono: ${propertyLog[i].ownerName}.
+                Quartos: ${propertyLog[i].bedroomNumber}.
+                Banheiros: ${propertyLog[i].bathroomNumber}.
+                Possui garagem: ${propertyLog[i].garage}.`);
+            }
             break
         case 3: 
             programaRunning = false;

@@ -2,6 +2,27 @@
 
 let programRunning = true;
 
+function CalcTriangleArea(base, height) {
+    let area = (base*height)/2;
+    return area;
+} 
+function CalcRetangleArea(base, height) {
+    let area = base*height;
+    return area;
+}
+function CalcSquareArea(side) {
+    let area = side**2;
+    return area;
+}
+function CalcTrapezoidArea(majorbase, minorbase, height) {
+    let area = ((majorbase+minorbase)*height)/2;
+    return area;
+}
+function CalcCircleArea(radius) {
+    let area = (3.14)*(radius**2);
+    return area;
+}
+
 while (programRunning) {
     let menuOptions = parseInt(prompt(`Qual área você gostaria de calcular?
     1 - Área do triângulo
@@ -14,60 +35,36 @@ while (programRunning) {
     switch(menuOptions) {
         // triangle
         case 1:
-            function triangleArea(n1, n2) {
-                let area = (n2*n1)/2;
-                return area;
-            } 
-            n1 = Number(prompt(`Insira o valor da base do triângulo:`));
-            n2 = Number(prompt(`Insira valor da altura do triângulo:`));
-            result = triangleArea(n1, n2);
-            alert(`O triângulo de base ${n1} e altura ${n2} tem área igual a ${result}`);
+            base = Number(prompt(`Insira o valor da base do triângulo:`));
+            height = Number(prompt(`Insira valor da altura do triângulo:`));
+            alert(`O triângulo de base ${base} e altura ${height} tem área igual a ${CalcTriangleArea(base, height)}`);
             break
         
         // rectangle
         case 2: 
-            function retangleArea(n1, n2) {
-                let area = n1*n2;
-                return area;
-            }
-            n1 = Number(prompt(`Insira o valor da base do retângulo:`));
-            n2 = Number(prompt(`Insira valor da altura do retângulo:`));
-            result = retangleArea(n1, n2);
-            alert(`O retângulo de base ${n1} e altura ${n2} tem área igual a ${result}`);
+            base = Number(prompt(`Insira o valor da base do retângulo:`));
+            height = Number(prompt(`Insira valor da altura do retângulo:`));
+            alert(`O retângulo de base ${base} e altura ${height} tem área igual a ${CalcRetangleArea(base, height)}`);
             break
         
         // square
         case 3: 
-            function squareArea(n1, n2) {
-                let area = n1**2;
-                return area;
-            }
-            n1 = Number(prompt(`Insira o valor do lado do quadrado:`));
-            result = squareArea(n1, n2);
-            alert(`O quadrado de lado ${n1} tem área igual a ${result}`);
+            side = Number(prompt(`Insira o valor do lado do quadrado:`));
+            alert(`O quadrado de lado ${side} tem área igual a ${CalcSquareArea(side)}`);
             break
         
         // trapezoid
         case 4:
-            function trapezoidArea(n1, n2, n3) {
-                let area = ((n1+n2)*n3)/2;
-                return area;
-            }
-            n1 = Number(prompt(`Insira o valor da base maior do trapézio:`));
-            n2 = Number(prompt(`Insira valor da base menor do trapézio:`));
-            n3 = Number(prompt(`Insira valor da altura do trapézio:`));
-            result = trapezoidArea(n1, n2, n3);
-            alert(`O trapézio de base maior ${n1}, base menor ${n2} e altura ${n3} tem área igual a ${result}`);
+            majorbase = Number(prompt(`Insira o valor da base maior do trapézio:`));
+            minorbase = Number(prompt(`Insira valor da base menor do trapézio:`));
+            height = Number(prompt(`Insira valor da altura do trapézio:`));
+            alert(`O trapézio de base maior ${majorbase}, base menor ${minorbase} e altura ${height} tem área igual a ${CalcTrapezoidArea(majorbase, minorbase, height)}`);
             break
         
-        case 5: // circle
-            function circleArea(n1) {
-                let area = (3.14)*(n1**2);
-                return area;
-            }
-            n1 = Number(prompt(`Insira o valor do raio do círculo:`));
-            result = circleArea(n1);
-            alert(`O círculo de raio ${n1} tem área igual a ${result}`);
+        // circle
+        case 5:
+            radius = Number(prompt(`Insira o valor do raio do círculo:`));
+            alert(`O círculo de raio ${radius} tem área igual a ${CalcCircleArea(radius)}`);
             break
         
         // close program

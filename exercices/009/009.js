@@ -3,6 +3,7 @@
 let programRunning = true;
 
 while (programRunning) {
+    
     let menuOptions = parseInt(prompt(`Qual área você gostaria de calcular?
     1 - Área do triângulo
     2 - Área do retângulo

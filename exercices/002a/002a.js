@@ -1,4 +1,5 @@
 // speed comparator
+
 let firstCarName = prompt("Qual o nome do primeiro veículo?");
 let firstCarVel = Number(prompt("Qual a velocidade dele?"));
 

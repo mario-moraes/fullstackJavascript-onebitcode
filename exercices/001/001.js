@@ -1,4 +1,5 @@
-// simple register form prompts
+// simple register form w/ prompts
+
 let firstName = prompt("Qual o seu nome?");
 let surname = prompt("Qual seu sobrenome?");
 let studyField = prompt("Qual sua área de estudo?");

@@ -1,4 +1,4 @@
-// rpg damage calculator program
+// rpg damage calculator
 
     // first character stats:
 let firstCharName = prompt("Insira o nome do primeiro personagem");

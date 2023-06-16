@@ -1,4 +1,5 @@
 //interactive bank menu
+
 let userInput= "";
 do {
     userInput = parseInt(prompt("Escolha uma das opções a seguir: \n1.Verificar saldo \n2.Verificar extrato \n3.Verificar pacote \n4.Falar com atendente \n5.Encerrar"));

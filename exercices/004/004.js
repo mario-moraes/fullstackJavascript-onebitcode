@@ -1,4 +1,5 @@
 // travel stats program
+
 let userName = prompt("Qual o seu nome?");
 let userTravelQuestion = prompt("Você já visitou alguma cidade diferente da sua? sim ou nao");
 

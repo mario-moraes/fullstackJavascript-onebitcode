@@ -39,7 +39,9 @@ while (programRunning) {
             alert(`[ERRO] Opção inválida, escolha entre as opções 1 a 6.`);
     }
     
-    function showJobOfferList() {};
+    function showJobOfferList(){
+        alert(jobInfoList.forEach());
+    };
     
     function createJobOffer(){
         let jobName = prompt(`Insira o nome da vaga:`);

@@ -1,7 +1,7 @@
 // real estate register
 
-let programaRunning = true;
-let propertyLog = [];
+const programaRunning = true;
+const propertyLog = [];
 
 while (programaRunning) {
     let menuOptions = parseInt(prompt(`
@@ -14,7 +14,7 @@ while (programaRunning) {
     
     switch(menuOptions) {
         case 1: 
-            let propertyRegister = {};
+            const propertyRegister = {};
 
             propertyRegister.ownerName = prompt(`Insira o nome do proprietário:`);
             propertyRegister.bedroomNumber = parseInt(prompt(`Insira a quantidade de quartos`));
@@ -38,7 +38,7 @@ while (programaRunning) {
             alert("Programa encerrado.");
             break
         
-            default:
+        default:
             alert(`[ERRO] Por favor selecione uma opção entre 1 e 3`);
     }
 }

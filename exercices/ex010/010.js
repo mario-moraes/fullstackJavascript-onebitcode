@@ -1,9 +1,9 @@
 // vacancy jobs program
 
-let programRunning = true; 
+const programRunning = true; 
 
-let jobInfoList = [];
-let jobList = [];  
+const jobInfoList = [];
+const jobList = [];  
 
 while (programRunning) {
     let menuOptions = Number(prompt(`Selecione uma das opçöes a seguir:

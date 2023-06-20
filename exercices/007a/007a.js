@@ -1,7 +1,7 @@
 // pacient waiting list
 
-let waitingList = [];
-let programRunning = true;
+const programRunning = true;
+const waitingList = [];
 let menuOptions = "";
 
 while (programRunning) {

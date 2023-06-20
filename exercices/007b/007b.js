@@ -1,10 +1,10 @@
 // deck stack program
 
-let deck = [];
-let programRunning = true;
+const deck = [];
+const programRunning = true;
 
 while (programRunning) {
-let cardsQuantity = deck.length
+const cardsQuantity = deck.length
 let menuOptions = parseInt(prompt(`O deck atualmente possui ${cardsQuantity} cartas. 
 Escolha uma opção:
 1. Inserir carta no deck

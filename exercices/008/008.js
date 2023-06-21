@@ -1,6 +1,6 @@
 // real estate register
 
-const programaRunning = true;
+let programaRunning = true;
 const propertyLog = [];
 
 while (programaRunning) {

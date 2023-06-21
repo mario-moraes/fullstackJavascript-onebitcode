@@ -1,7 +1,8 @@
 // deck stack program
 
+let programRunning = true;
+
 const deck = [];
-const programRunning = true;
 
 while (programRunning) {
 const cardsQuantity = deck.length

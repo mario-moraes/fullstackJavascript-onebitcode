@@ -1,6 +1,6 @@
 // vacancy jobs program
 
-const programRunning = true; 
+let programRunning = true; 
 
 const jobInfoList = [];
 
@@ -66,7 +66,7 @@ while (programRunning) {
             Cargo: ${jobInfoList[index].name}.
             Descrição: ${jobInfoList[index].description}.
             Data limite: ${jobInfoList[index].limit}.
-            Candidatos: ${jobInfoList[index].candidates.candidate}.`);
+            Candidatos: ${jobInfoList[index].candidates}.`);
     };
 
     function applyJobOffer(){

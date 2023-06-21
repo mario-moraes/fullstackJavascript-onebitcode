@@ -1,7 +1,9 @@
 // pacient waiting list
 
-const programRunning = true;
+let programRunning = true;
+
 const waitingList = [];
+
 let menuOptions = "";
 
 while (programRunning) {
@@ -38,8 +40,8 @@ while (programRunning) {
             }
             break;
         case 3:
-            alert("Programa encerrado.");
             programRunning = false;
+            alert("Programa encerrado.");
             break;
         default:
             alert("[ERRO] Opção inválida: escolha a opção 1, 2 ou 3.");

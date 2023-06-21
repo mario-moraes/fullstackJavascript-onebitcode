@@ -1,6 +1,7 @@
 // palindrome identificator 
 
 let userInput = prompt("Escreva uma palavra e descubra se ela é um palíndromo:");
+
 let reverseWord = "";
 
 for (let i = (userInput.length - 1); i>=0; i--) {

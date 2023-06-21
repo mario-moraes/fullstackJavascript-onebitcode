@@ -1,6 +1,6 @@
 // common geometric forms area calculator
 
-const programRunning = true;
+let programRunning = true;
 
 while (programRunning) {
     

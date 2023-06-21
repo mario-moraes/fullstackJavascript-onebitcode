@@ -39,7 +39,7 @@ while (programRunning) {
     }
     
     function showJobOfferList(){
-        
+        alert(`Lista de vagas: ${jobInfoList.map(jobInfo => {jobInfo.name}).join(', ')}`);
     };
     
     function createJobOffer(){
@@ -70,24 +70,34 @@ while (programRunning) {
     };
 
     function applyJobOffer(){
+        let index = prompt(`Qual o índice da vaga?`);
         let candidateName = prompt(`Qual o nome do canditado a vaga?`);
-        let jobIndex = prompt(`Qual o índice da vaga?`);
+        let confirmation = alert(`Aplicar o candidato ${candidateName} na vaga de ${jobInfoList[index]} `)
         
-        const candidate = {
-            candidateName
-        };
-        jobInfoList[jobIndex].candidates.push(candidate);
+        if (confirmation == "sim") {
+            const candidate = {
+                candidateName
+            };
+            jobInfoList[index].candidates.push(candidate);
+        } else {
+            return programRunning = true
+        }
     };
 
     function deleteJobOffer(){;
         let index = parseInt(prompt(`Qual o índice da vaga que você gostaria de deletar?`));
-        confirm(`o índice ${index} se refere a vaga:
+        
+        let confirmation = prompt(`o índice ${index} se refere a vaga:
             Cargo: ${jobInfoList[index].name}.
             Descrição: ${jobInfoList[index].description}.
             Data limite: ${jobInfoList[index].limit}.
-        Gostaria realmente de deletar esta vaga e seus dados associados?`);
-        if (confirm) {
+            
+            Gostaria realmente de deletar esta vaga e seus dados associados? Sim/Não`);
+        
+        if (confirmation == "sim") {
             jobInfoList.splice(index, 1);
-        } 
+        } else {
+            return programRunning = true
+        }
     }
 }

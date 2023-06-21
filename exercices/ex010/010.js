@@ -3,7 +3,6 @@
 const programRunning = true; 
 
 const jobInfoList = [];
-const jobList = [];  
 
 while (programRunning) {
     let menuOptions = Number(prompt(`Selecione uma das opçöes a seguir:
@@ -40,7 +39,7 @@ while (programRunning) {
     }
     
     function showJobOfferList(){
-        alert(jobInfoList.forEach());
+        
     };
     
     function createJobOffer(){
@@ -48,11 +47,12 @@ while (programRunning) {
         let jobDescription = prompt(`Insira a descrição da vaga:`);
         let jobLimitDate = prompt(`Insira a data limite para aplicação da vaga:`);
         
-        let jobInfo = { 
+        const jobInfo = { 
             name: jobName,
             description: jobDescription,
-            limit: jobLimitDate 
-        }
+            limit: jobLimitDate, 
+            candidates: []
+        };
         jobInfoList.push(jobInfo);
         alert(`Dados inseridos com sucesso!
         - Nome da vaga:${jobInfo.name}
@@ -60,8 +60,25 @@ while (programRunning) {
         - Data limite: ${jobInfo.limit}`);
     };
     
-    function visualizeJobOffer(){};
-    function applyJobOffer(){};
+    function visualizeJobOffer(){
+        let index = Number(prompt(`Insira o índice da vaga para visualizar seus detalhes:`));
+        alert(`A vaga ${index} selecionada é:
+            Cargo: ${jobInfoList[index].name}.
+            Descrição: ${jobInfoList[index].description}.
+            Data limite: ${jobInfoList[index].limit}.
+            Candidatos: ${jobInfoList[index].candidates.candidate}.`);
+    };
+
+    function applyJobOffer(){
+        let candidateName = prompt(`Qual o nome do canditado a vaga?`);
+        let jobIndex = prompt(`Qual o índice da vaga?`);
+        
+        const candidate = {
+            name: candidateName,
+        };
+        jobInfoList[jobIndex].candidates.push(candidate);
+    };
+
     function deleteJobOffer(){};
 
 }

@@ -5,7 +5,7 @@ let programRunning = true;
 const jobInfoList = [];
 
 while (programRunning) {
-    let menuOptions = Number(prompt(`Selecione uma das opçöes a seguir:
+    let menuOptions = parseInt(prompt(`Selecione uma das opçöes a seguir:
     1. Listar vagas disponíveis
     2. Criar um nova vaga
     3. Visualizar uma vaga
@@ -61,12 +61,12 @@ while (programRunning) {
     };
     
     function visualizeJobOffer(){
-        let index = Number(prompt(`Insira o índice da vaga para visualizar seus detalhes:`));
+        let index = parseInt(prompt(`Insira o índice da vaga para visualizar seus detalhes:`));
         alert(`A vaga ${index} selecionada é:
             Cargo: ${jobInfoList[index].name}.
             Descrição: ${jobInfoList[index].description}.
             Data limite: ${jobInfoList[index].limit}.
-            Candidatos: ${jobInfoList[index].candidates}.`);
+            Candidatos: ${jobInfoList[index].candidates.map(candidate => candidate.candidateName).join(', ')}.`);
     };
 
     function applyJobOffer(){
@@ -74,11 +74,20 @@ while (programRunning) {
         let jobIndex = prompt(`Qual o índice da vaga?`);
         
         const candidate = {
-            name: candidateName,
+            candidateName
         };
         jobInfoList[jobIndex].candidates.push(candidate);
     };
 
-    function deleteJobOffer(){};
-
+    function deleteJobOffer(){;
+        let index = parseInt(prompt(`Qual o índice da vaga que você gostaria de deletar?`));
+        confirm(`o índice ${index} se refere a vaga:
+            Cargo: ${jobInfoList[index].name}.
+            Descrição: ${jobInfoList[index].description}.
+            Data limite: ${jobInfoList[index].limit}.
+        Gostaria realmente de deletar esta vaga e seus dados associados?`);
+        if (confirm) {
+            jobInfoList.splice(index, 1);
+        } 
+    }
 }

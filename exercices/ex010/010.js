@@ -70,45 +70,40 @@ while (programRunning) {
         }
     };
     
-    function visualizeJobOffer(){
-        let index = parseInt(prompt(`Insira o índice da vaga para visualizar seus detalhes:`));
+    function visualizeJobOffer() {
+        const index = parseInt(prompt(`Insira o índice da vaga para visualizar seus detalhes:`));
         
         alert(`A vaga ${index} selecionada é:
             Cargo: ${jobOfferList[index].offerName}.
             Descrição: ${jobOfferList[index].description}.
             Data limite: ${jobOfferList[index].limitDate}.
-            Candidatos: ${jobOfferList[index].candidates.map(candidate => candidate.candidateName).join(', ')}.`);
+            Candidatos: ${jobOfferList[index].candidates}`);
     };
 
     function registerCandidate() {
         const index = prompt(`Qual o índice da vaga?`);
-        const candidateName = prompt(`Qual o nome do canditado a vaga?`);
-        const confirmation = alert(`Aplicar o candidato ${candidateName} na vaga de ${jobOfferList[index]} `)
+        const candidateName = prompt(`Qual o nome do canditado(a) a vaga?`);
+        const confirmation = confirm(`Aplicar o candidato ${candidateName} na vaga de ${jobOfferList[index].offerName}?`);
         
-        if (confirmation == "sim") {
-            const candidate = {
-                candidateName
-            };
-            jobOfferList[index].candidates.push(candidate);
-        } else {
-            return programRunning = true
-        }
+        if (confirmation) {
+            jobOfferList[index].candidates.push(candidateName);
+            alert(`Candidato(a) ${candidateName} inscrito com sucesso.`);
+        };
     };
 
     function deleteJobOffer() {;
         const index = parseInt(prompt(`Qual o índice da vaga que você gostaria de deletar?`));
         
-        const confirmation = prompt(`o índice ${index} se refere a vaga:
-            Cargo: ${jobOfferList[index].name}.
-            Descrição: ${jobInfoList[index].description}.
-            Data limite: ${jobInfoList[index].limit}.
-            
+        const confirmation = confirm(`o índice ${index} se refere a vaga:
+            Cargo: ${jobOfferList[index].offerName}.
+            Descrição: ${jobOfferList[index].description}.
+            Data limite: ${jobOfferList[index].dateLimit}.
+        
             Gostaria realmente de deletar esta vaga e seus dados associados? Sim/Não`);
         
-        if (confirmation == "sim") {
+        if (confirmation) {
             jobOfferList.splice(index, 1);
-        } else {
-            return programRunning = true
-        }
+            alert(`Vaga ${jobOfferList[index].offerName} deletada com sucesso.`);
+        } 
     }
 }

@@ -1,11 +1,11 @@
-// vacancy jobs program
+// job offer register program
 
 let programRunning = true; 
 
-const jobInfoList = [];
+const jobOfferList = [];
 
 while (programRunning) {
-    let menuOptions = parseInt(prompt(`Selecione uma das opçöes a seguir:
+    const menuOptions = parseInt(prompt(`Selecione uma das opçöes a seguir:
     1. Listar vagas disponíveis
     2. Criar um nova vaga
     3. Visualizar uma vaga
@@ -23,7 +23,7 @@ while (programRunning) {
         case 3: visualizeJobOffer();
             break;
         
-        case 4: applyJobOffer();
+        case 4: registerCandidate();
             break;
         
         case 5: deleteJobOffer();
@@ -38,64 +38,75 @@ while (programRunning) {
             alert(`[ERRO] Opção inválida, escolha entre as opções 1 a 6.`);
     }
     
-    function showJobOfferList(){
-        alert(`Lista de vagas: ${jobInfoList.map(jobInfo => {jobInfo.name}).join(', ')}`);
+    function showJobOfferList() {
+        const textOfferList = jobOfferList.reduce((text, job, index) => {
+            text += index;
+            text += job.offerName;
+            `${text += job.candidates.length} candidatos`;
+            return text;
+            });
+        alert(textOfferList);
     };
     
-    function createJobOffer(){
-        let jobName = prompt(`Insira o nome da vaga:`);
-        let jobDescription = prompt(`Insira a descrição da vaga:`);
-        let jobLimitDate = prompt(`Insira a data limite para aplicação da vaga:`);
+    function createJobOffer() {
+        const offerName = prompt(`Insira o nome da vaga:`);
+        const description = prompt(`Insira a descrição da vaga:`);
+        const limitDate = prompt(`Insira a data limite para aplicação da vaga:`);
         
-        const jobInfo = { 
-            name: jobName,
-            description: jobDescription,
-            limit: jobLimitDate, 
-            candidates: []
-        };
-        jobInfoList.push(jobInfo);
-        alert(`Dados inseridos com sucesso!
-        - Nome da vaga: ${jobInfo.name}.
-        - Descrição: ${jobInfo.description}.
-        - Data limite: ${jobInfo.limit}.`);
+        const confirmation = confirm(`Deseja criar a vaga com os seguintes dados?
+        - Nome da vaga: ${offerName}.
+        - Descrição: ${description}.
+        - Data limite: ${limitDate}.`);
+        
+        if (confirmation) {
+            const jobInfo = { 
+                offerName,
+                description,
+                limitDate, 
+                candidates: []
+                };
+            jobOfferList.push(jobInfo);
+            alert(`Vaga de ${jobInfo.offerName} cadastrada com sucesso!`);
+        }
     };
     
     function visualizeJobOffer(){
         let index = parseInt(prompt(`Insira o índice da vaga para visualizar seus detalhes:`));
+        
         alert(`A vaga ${index} selecionada é:
-            Cargo: ${jobInfoList[index].name}.
-            Descrição: ${jobInfoList[index].description}.
-            Data limite: ${jobInfoList[index].limit}.
-            Candidatos: ${jobInfoList[index].candidates.map(candidate => candidate.candidateName).join(', ')}.`);
+            Cargo: ${jobOfferList[index].offerName}.
+            Descrição: ${jobOfferList[index].description}.
+            Data limite: ${jobOfferList[index].limitDate}.
+            Candidatos: ${jobOfferList[index].candidates.map(candidate => candidate.candidateName).join(', ')}.`);
     };
 
-    function applyJobOffer(){
-        let index = prompt(`Qual o índice da vaga?`);
-        let candidateName = prompt(`Qual o nome do canditado a vaga?`);
-        let confirmation = alert(`Aplicar o candidato ${candidateName} na vaga de ${jobInfoList[index]} `)
+    function registerCandidate() {
+        const index = prompt(`Qual o índice da vaga?`);
+        const candidateName = prompt(`Qual o nome do canditado a vaga?`);
+        const confirmation = alert(`Aplicar o candidato ${candidateName} na vaga de ${jobOfferList[index]} `)
         
         if (confirmation == "sim") {
             const candidate = {
                 candidateName
             };
-            jobInfoList[index].candidates.push(candidate);
+            jobOfferList[index].candidates.push(candidate);
         } else {
             return programRunning = true
         }
     };
 
-    function deleteJobOffer(){;
-        let index = parseInt(prompt(`Qual o índice da vaga que você gostaria de deletar?`));
+    function deleteJobOffer() {;
+        const index = parseInt(prompt(`Qual o índice da vaga que você gostaria de deletar?`));
         
-        let confirmation = prompt(`o índice ${index} se refere a vaga:
-            Cargo: ${jobInfoList[index].name}.
+        const confirmation = prompt(`o índice ${index} se refere a vaga:
+            Cargo: ${jobOfferList[index].name}.
             Descrição: ${jobInfoList[index].description}.
             Data limite: ${jobInfoList[index].limit}.
             
             Gostaria realmente de deletar esta vaga e seus dados associados? Sim/Não`);
         
         if (confirmation == "sim") {
-            jobInfoList.splice(index, 1);
+            jobOfferList.splice(index, 1);
         } else {
             return programRunning = true
         }

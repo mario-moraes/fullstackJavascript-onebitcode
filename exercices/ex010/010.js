@@ -55,9 +55,9 @@ while (programRunning) {
         };
         jobInfoList.push(jobInfo);
         alert(`Dados inseridos com sucesso!
-        - Nome da vaga:${jobInfo.name}
-        - Descrição: ${jobInfo.description}
-        - Data limite: ${jobInfo.limit}`);
+        - Nome da vaga: ${jobInfo.name}.
+        - Descrição: ${jobInfo.description}.
+        - Data limite: ${jobInfo.limit}.`);
     };
     
     function visualizeJobOffer(){

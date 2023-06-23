@@ -47,17 +47,20 @@ while (programRunning) {
         area = (base*height)/2;
         return area;
     } 
+    
     function CalcRetangleArea() {
         base = Number(prompt(`Insira o valor da base do retângulo:`));
         height = Number(prompt(`Insira valor da altura do retângulo:`));
         area = base*height;
         return area;
     }
+
     function CalcSquareArea() {
         side = Number(prompt(`Insira o valor do lado do quadrado:`));
         area = side*side;
         return area;
     }
+
     function CalcTrapezoidArea() {
         majorbase = Number(prompt(`Insira o valor da base maior do trapézio:`));
         minorbase = Number(prompt(`Insira valor da base menor do trapézio:`));
@@ -65,6 +68,7 @@ while (programRunning) {
         area = ((majorbase+minorbase)*height)/2;
         return area;
     }
+
     function CalcCircleArea() {
         radius = Number(prompt(`Insira o valor do raio do círculo:`));
         area = (3.14)*(radius**2);

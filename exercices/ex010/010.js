@@ -67,6 +67,7 @@ while (programRunning) {
                 limitDate, 
                 candidates: []
                 };
+                
             jobOfferList.push(jobInfo);
             alert(`Vaga de ${jobInfo.offerName} cadastrada com sucesso!`);
         }

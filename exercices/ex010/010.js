@@ -5,6 +5,7 @@ let programRunning = true;
 const jobOfferList = [];
 
 while (programRunning) {
+    
     const menuOptions = parseInt(prompt(`Selecione uma das opçöes a seguir:
     1. Listar vagas disponíveis
     2. Criar um nova vaga

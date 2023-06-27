@@ -8,19 +8,13 @@ function pickPlayer() {
     const confirmation = confirm(`Você gostaria de escalar o jogador ${playerName}, camisa ${playerNumber}, como ${playerPosition}?`);
 
     if (confirmation) {
-        const playerInfo = {
-            playerName,
-            playerPosition,
-            playerNumber
-        }
 
-        const playersUl = document.querySelector(`#playersUl`);
-
-        const li = document.createElement(`li`);
+        const playerItem = document.createElement(`li`);
+        playerItem.id = `shirt${playerNumber}`;
+        playerItem.innerText = `Jogador: ${playerName} / Posição: ${playerPosition} / Camisa: ${playerNumber}.`;
         
-        li.innerText = `Jogador: ${playerInfo.playerName} / Posição: ${playerInfo.playerPosition} / Camisa: ${playerInfo.playerNumber}.`;
-
-        playersUl.appendChild(li);
+        const playersUl = document.querySelector(`#playersUl`);
+        playersUl.appendChild(playerItem);
 
         document.querySelector(`#playerName`).value = '';
         document.querySelector(`#playerPosition`).value = '';
@@ -32,6 +26,9 @@ function removePlayer() {
     const confirmation = confirm(`Você gostaria de remover o jogador camisa ${playerNumber}?`);
 
     if(confirmation) {
+        const playerToRemove = document.querySelector(`#shirt${playerNumber}`);
+        playerToRemove.remove();
+        document.querySelector(`#playerNumber`).value = '';
     }
 }
 

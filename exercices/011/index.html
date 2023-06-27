@@ -14,20 +14,26 @@
 </head>
 <body>
     <h1>Escalação do Time</h1>
-    <p>Inserira os dados do(s) jogador(es) que você gostaria de escalar para seu time.</p>
-    <label for="playerName">
-        Jogador: <input type="text" name="playerName" id="playerName" placeholder="nome e sobrenome">
-    </label> <br>
-    <label for="playerPosition">
-        Posição: <input type="text" name="playerPosition" id="playerPosition" placeholder="atacante, centroavante...">
-    </label> <br>
-    <label for="playerNumber">
-        Número da Camisa: <input type="number" name="playerNumber" id="playerNumber" min="1" max="10">
-    </label> <br>
-
-    <button onclick="PickPlayer()">Escalar</button>
+    <p>Insira os dados do(s) jogador(es) que você gostaria de por no seu time e clique em Escalar. </p>
+    <p>Caso desista de uma escalação, insira o número da camisa do jogador e clique em Remover Jogador.</p>
     
-    <section id="soccerTeam"></section>
+    <section>
+        <form action="#">
+            <label for="playerName">Jogador:</label>
+            <input type="text" name="playerName" id="playerName" placeholder="nome e sobrenome"><br>
+            <label for="playerPosition">Posição:</label>
+            <input type="text" name="playerPosition" id="playerPosition" placeholder="atacante, centroavante..."><br>
+            <label for="playerNumber">Número da Camisa:</label>
+            <input type="number" name="playerNumber" id="playerNumber" min="1" max="10"><br>
+        </form>
+        <button onclick="pickPlayer()">Escalar</button>
+        <button onclick="pickPlayer()">Remover jogador</button>
+    </section>
+    
+    <section id="soccerTeam">
+        <h2>Time:</h2>
+        <ul id="playersUl"></ul>
+    </section>
     
     <script src="index.js"></script>
 </body>

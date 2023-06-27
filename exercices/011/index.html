@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 011</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escalação do Time</h1>
+    <p>Inserira os dados do(s) jogador(es) que você gostaria de escalar para seu time.</p>
+    <label for="playerName">
+        Jogador: <input type="text" name="playerName" id="playerName" placeholder="nome e sobrenome">
+    </label> <br>
+    <label for="playerPosition">
+        Posição: <input type="text" name="playerPosition" id="playerPosition" placeholder="atacante, centroavante...">
+    </label> <br>
+    <label for="playerNumber">
+        Número da Camisa: <input type="number" name="playerNumber" id="playerNumber" min="1" max="10">
+    </label> <br>
+
+    <button onclick="PickPlayer()">Escalar</button>
+    
+    <section id="soccerTeam"></section>
+    
+    <script src="index.js"></script>
+</body>
+</html>

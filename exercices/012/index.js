@@ -31,7 +31,7 @@ function createTech(ev) {
     newRow.className = `inputRow`;
 
     const techNameLabel = createLabel(`Nome: `, `techName-${rowIndex}`);
-    const techNameInput = createInput(`techName-${rowIndex}`,`techName-${rowIndex}`, null);
+    const techNameInput = createInput(`techName`,`techName-${rowIndex}`, null);
 
     const expLabel = createLabel(`Experiência:`);
     
@@ -68,7 +68,7 @@ function submitForm(ev) {
     const inputRows = document.querySelectorAll(`.inputRow`);
     let technologies = [];
     inputRows.forEach(function(row) {
-        const techName = document.querySelector(`input[name="${row.id}"]`).value;
+        const techName = document.querySelector(`#${row.id} input[name="techName"]`).value;
         const techExp = document.querySelector(`#${row.id} input[type="radio"]:checked`).value;
         technologies.push({ 
             name: techName, 

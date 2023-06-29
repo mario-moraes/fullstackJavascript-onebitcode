@@ -23,6 +23,7 @@ function createInput(name, id, value, type = `text`, placeholder = ``) {
 }
 
 function createTech(ev) {
+    const techList = document.querySelector(`#techlist`);
     const newRow = document.createElement(`li`);
     const rowIndex = inputRows;
     inputRows++;
@@ -30,36 +31,36 @@ function createTech(ev) {
     newRow.className = `inputRow`;
 
     const techNameLabel = createLabel(`Nome: `, `techName-${rowIndex}`);
-    const techNameInput = createInput(`techName-` + rowIndex, null, `techName`);
+    const techNameInput = createInput(`techName-${rowIndex}`,`techName-${rowIndex}`, null);
 
     const expLabel = createLabel(`Experiência:`);
-    const id1 = `expRadio-${rowIndex} .1`;
-    const expRadio1 = createInput(id1, `0-2 anos`, `techExp-${rowIndex}`, `radio`);
+    
+    const id1 = `expRadio-${rowIndex}.1`;
+    const expRadio1 = createInput(`techExp-${rowIndex}`, id1,`0-2 anos`, `radio`);
 
     const expLabel1 = createLabel(`0-2 anos`, id1);
     const id2 = `expRadio-${rowIndex}.2`;
-    const expRadio2 = createInput(id2, `3-4 anos`, `techExp-${rowIndex}`, `radio`);
+    const expRadio2 = createInput(`techExp-${rowIndex}`, id2, `3-4 anos`, `radio`);
 
     const expLabel2 = createLabel(`3-4 anos`, id2);
     const id3 = `expRadio-${rowIndex}.3`;
-    const expRadio3 = createInput(id3, `5+ anos`, `techExp-${rowIndex}`, `radio`);
+    const expRadio3 = createInput(`techExp-${rowIndex}`, id3,`5+ anos`, `radio`);
 
     const expLabel3 = createLabel(`5+ anos`, id3);
 
     const removeRowBtn = document.createElement(`button`);
     removeRowBtn.type = `button`;
     removeRowBtn.innerText = `Remover`;
-    removeRowBtn.addEventListener(`click`, function () {
-        stackInputs.removeChild(newRow);
+    removeRowBtn.addEventListener(`click`, function() {
+        techList.removeChild(newRow);
     });
 
     newRow.append(
         techNameLabel, techNameInput, expLabel, expRadio1, expLabel1, expRadio2, expLabel2, expRadio3, expLabel3, removeRowBtn
-    );
-    const techList = document.querySelector(`#techlist`);
+        );
     techList.appendChild(newRow);
 };
-
+addTech.addEventListener(`click`, createTech);
 
 
 

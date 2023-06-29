@@ -15,16 +15,18 @@
 </head>
 <body>
   <h1>Cadastro de Devs</h1>
-  <form id="form">
+  <h2>- Developer:</h2>
+  <form id="formdev">
     <label for="devname">Nome:</label>
     <input type="text" name="devname" id="devname" placeholder="nome completo">
+    <br>
+    
+    <h2>- Tech Stack:</h2>
+    <button id="addtech" type="button">Adicionar Tecnologia</button>
+    <ul id="techlist"></ul>
+    <br>
+    <hr>
+    <button id="adddev" type="submit">Cadastrar Desenvolvedor(a)</button>
   </form>
-  
-  <button id="addtech">Adicionar Tecnologia</button>
-  <button id="adddev">Cadastrar Desenvolvedor(a)</button>
-  
-  <section id="technologies">
-    <form id="techform"></form>
-  </section>
 </body>
-</html>
+</html> 

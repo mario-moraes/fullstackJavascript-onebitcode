@@ -60,20 +60,16 @@ function createTech(ev) {
         );
     techList.appendChild(newRow);
 };
-addTech.addEventListener(`click`, createTech);
-
-
-
 
 function submitForm(ev) {
     ev.preventDefault();
 
-    const fullnameInput = document.getElementById(`fullname`);
+    const fullnameInput = document.querySelector(`#devname`);
     const inputRows = document.querySelectorAll(`.inputRow`);
     let technologies = [];
-    inputRows.forEach(function (row) {
-        const techName = document.querySelector(`#${row.idinput}[name="techName"]`).value;
-        const techExp = document.querySelector(`#${row.idinput}[type="radio"]:checked`).value;
+    inputRows.forEach(function(row) {
+        const techName = document.querySelector(`input[name="${row.id}"]`).value;
+        const techExp = document.querySelector(`#${row.id} input[type="radio"]:checked`).value;
         technologies.push({ 
             name: techName, 
             exp: techExp 

@@ -29,20 +29,20 @@ function createTech(ev) {
     newRow.id = `inputRow-${rowIndex}`;
     newRow.className = `inputRow`;
 
-    const techNameLabel = createLabel(`Nome: `, `techName-` + rowIndex);
+    const techNameLabel = createLabel(`Nome: `, `techName-${rowIndex}`);
     const techNameInput = createInput(`techName-` + rowIndex, null, `techName`);
 
-    const expLabel = createLabel(`Experiência: `);
-    const id1 = `expRadio-` + rowIndex + `.1`;
-    const expRadio1 = createInput(id1, `0-2 anos`, `techExp-` + rowIndex, `radio`);
+    const expLabel = createLabel(`Experiência:`);
+    const id1 = `expRadio-${rowIndex} .1`;
+    const expRadio1 = createInput(id1, `0-2 anos`, `techExp-${rowIndex}`, `radio`);
 
     const expLabel1 = createLabel(`0-2 anos`, id1);
-    const id2 = `expRadio-` + rowIndex + `.2`;
-    const expRadio2 = createInput(id2, `3-4 anos`, `techExp-` + rowIndex, `radio`);
+    const id2 = `expRadio-${rowIndex}.2`;
+    const expRadio2 = createInput(id2, `3-4 anos`, `techExp-${rowIndex}`, `radio`);
 
     const expLabel2 = createLabel(`3-4 anos`, id2);
-    const id3 = `expRadio-` + rowIndex + `.3`;
-    const expRadio3 = createInput(id3, `5+ anos`, `techExp-` + rowIndex, `radio`);
+    const id3 = `expRadio-${rowIndex}.3`;
+    const expRadio3 = createInput(id3, `5+ anos`, `techExp-${rowIndex}`, `radio`);
 
     const expLabel3 = createLabel(`5+ anos`, id3);
 
@@ -60,6 +60,10 @@ function createTech(ev) {
     techList.appendChild(newRow);
 };
 
+
+
+
+
 function submitForm(ev) {
     ev.preventDefault();
 
@@ -67,9 +71,8 @@ function submitForm(ev) {
     const inputRows = document.querySelectorAll(`.inputRow`);
     let technologies = [];
     inputRows.forEach(function (row) {
-        // #rowId input[name="techName"]
-        const techName = document.querySelector(`#` + row.id + `input[name="techName"]`).value;
-        const techExp = document.querySelector(`#` + row.id + `input[type="radio"]:checked`).value;
+        const techName = document.querySelector(`#${row.idinput}[name="techName"]`).value;
+        const techExp = document.querySelector(`#${row.idinput}[type="radio"]:checked`).value;
         technologies.push({ 
             name: techName, 
             exp: techExp 
@@ -82,7 +85,7 @@ function submitForm(ev) {
     }
     
     developers.push(newDev);
-    alert(`Dev cadastrado com sucesso!`);
+    alert(`Desenvolvedor cadastrado com sucesso!`);
     fullnameInput.value = ``;
     
     inputRows.forEach(function (row) {

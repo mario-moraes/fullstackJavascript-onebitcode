@@ -22,7 +22,7 @@ function createInput(name, id, value, type = `text`, placeholder = ``) {
     return input
 }
 
-function createBtns(ev) {
+function createTech(ev) {
     const newRow = document.createElement(`li`);
     const rowIndex = inputRows;
     inputRows++;
@@ -35,12 +35,15 @@ function createBtns(ev) {
     const expLabel = createLabel(`Experiência: `);
     const id1 = `expRadio-` + rowIndex + `.1`;
     const expRadio1 = createInput(id1, `0-2 anos`, `techExp-` + rowIndex, `radio`);
+
     const expLabel1 = createLabel(`0-2 anos`, id1);
     const id2 = `expRadio-` + rowIndex + `.2`;
     const expRadio2 = createInput(id2, `3-4 anos`, `techExp-` + rowIndex, `radio`);
+
     const expLabel2 = createLabel(`3-4 anos`, id2);
     const id3 = `expRadio-` + rowIndex + `.3`;
     const expRadio3 = createInput(id3, `5+ anos`, `techExp-` + rowIndex, `radio`);
+
     const expLabel3 = createLabel(`5+ anos`, id3);
 
     const removeRowBtn = document.createElement(`button`);
@@ -88,5 +91,5 @@ function submitForm(ev) {
     console.log(developers);
 }
 
-addTech.addEventListener(`click`, createBtns(ev));
-formDev.addEventListener(`submit`, submitForm(ev));
+addTech.addEventListener(`click`, createTech);
+formDev.addEventListener(`submit`, submitForm);

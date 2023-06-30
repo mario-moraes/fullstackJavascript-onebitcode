@@ -56,7 +56,16 @@ function createTech(ev) {
     });
 
     newRow.append(
-        techNameLabel, techNameInput, expLabel, expRadio1, expLabel1, expRadio2, expLabel2, expRadio3, expLabel3, removeRowBtn
+        techNameLabel, 
+        techNameInput, 
+        expLabel, 
+        expRadio1, 
+        expLabel1, 
+        expRadio2, 
+        expLabel2, 
+        expRadio3, 
+        expLabel3, 
+        removeRowBtn
         );
     techList.appendChild(newRow);
 };

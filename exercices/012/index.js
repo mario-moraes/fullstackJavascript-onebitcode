@@ -10,7 +10,7 @@ function createLabel(text, htmlFor) {
     label.innerText = text;
     label.htmlFor = htmlFor;
     return label
-}
+} 
 
 function createInput(name, id, value, type = `text`, placeholder = ``) {
     const input = document.createElement(`input`);
@@ -37,15 +37,14 @@ function createTech(ev) {
     
     const id1 = `expRadio-${rowIndex}.1`;
     const expRadio1 = createInput(`techExp-${rowIndex}`, id1,`0-2 anos`, `radio`);
-
     const expLabel1 = createLabel(`0-2 anos`, id1);
+    
     const id2 = `expRadio-${rowIndex}.2`;
     const expRadio2 = createInput(`techExp-${rowIndex}`, id2, `3-4 anos`, `radio`);
-
     const expLabel2 = createLabel(`3-4 anos`, id2);
+    
     const id3 = `expRadio-${rowIndex}.3`;
     const expRadio3 = createInput(`techExp-${rowIndex}`, id3,`5+ anos`, `radio`);
-
     const expLabel3 = createLabel(`5+ anos`, id3);
 
     const removeRowBtn = document.createElement(`button`);
@@ -72,10 +71,10 @@ function createTech(ev) {
 
 function submitForm(ev) {
     ev.preventDefault();
-
+    let technologies = [];
+    
     const fullnameInput = document.querySelector(`#devname`);
     const inputRows = document.querySelectorAll(`.inputRow`);
-    let technologies = [];
     inputRows.forEach(function(row) {
         const techName = document.querySelector(`#${row.id} input[name="techName"]`).value;
         const techExp = document.querySelector(`#${row.id} input[type="radio"]:checked`).value;

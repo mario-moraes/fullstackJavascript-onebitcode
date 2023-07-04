@@ -23,12 +23,11 @@ function createInput(name, id, value, type = `text`, placeholder = ``) {
 }
 
 function createTech(ev) {
-    const techList = document.querySelector(`#techlist`);
     const newRow = document.createElement(`li`);
     const rowIndex = inputRows;
-    inputRows++;
-    newRow.id = `inputRow-${rowIndex}`;
-    newRow.className = `inputRow`;
+        inputRows++;
+        newRow.id = `inputRow-${rowIndex}`;
+        newRow.className = `inputRow`;
 
     const techNameLabel = createLabel(`Nome: `, `techName-${rowIndex}`);
     const techNameInput = createInput(`techName`,`techName-${rowIndex}`, null);
@@ -46,14 +45,15 @@ function createTech(ev) {
     const id3 = `expRadio-${rowIndex}.3`;
     const expRadio3 = createInput(`techExp-${rowIndex}`, id3,`5+ anos`, `radio`);
     const expLabel3 = createLabel(`5+ anos`, id3);
-
+    
     const removeRowBtn = document.createElement(`button`);
-    removeRowBtn.type = `button`;
-    removeRowBtn.innerText = `Remover`;
-    removeRowBtn.addEventListener(`click`, function() {
-        techList.removeChild(newRow);
-    });
+        removeRowBtn.type = `button`;
+        removeRowBtn.innerText = `Remover`;
+        removeRowBtn.addEventListener(`click`, function() {
+            techList.removeChild(newRow);
+        });
 
+    const techList = document.querySelector(`#techlist`);
     newRow.append(
         techNameLabel, 
         techNameInput, 
@@ -72,7 +72,7 @@ function createTech(ev) {
 function submitForm(ev) {
     ev.preventDefault();
     let technologies = [];
-    
+
     const fullnameInput = document.querySelector(`#devname`);
     const inputRows = document.querySelectorAll(`.inputRow`);
     inputRows.forEach(function(row) {

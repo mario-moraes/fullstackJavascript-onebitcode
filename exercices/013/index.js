@@ -1,22 +1,27 @@
-const startGameBtn = document.querySelector(`#start-game-btn`);
-startGameBtn.addEventListener(`click`, beginGame);
-
 let player = ``;
-
-function updateTitle() {
-  const playerInput = document.getElementById(player)
-  document.querySelector(`#players-turn`).innerText = playerInput.value
-};
+let virtualBoard = [];
 
 function beginGame() {
+  player = `playerOne`;
+  virtualBoard = [['', '', ''], ['', '', ''], ['', '', '']];
+  updateTitle();
   const boardSpans = document.querySelectorAll(`#board span`);
   boardSpans.forEach(function(span){
     span.addEventListener(`click`, handleRegionClick)
   });
 };
 
+function updateTitle() {
+  const playerInput = document.getElementById(player)
+  document.querySelector(`#players-turn`).innerText = playerInput.value
+};
+
 function handleRegionClick(e){
   const span = e.currentTarget;
+  const region = span.dataset.region;
+  const rowColumnPair = region.split('.');
+  const row = rowColumnPair[0];
+  const column = rowColumnPair[1];
   if(player === `playerOne`) {
     span.innerText = `X`;
   } else {
@@ -27,11 +32,11 @@ function handleRegionClick(e){
   const winRegions = getWinRegions()
   if (winRegions.length > 0) {
     handleWin(winRegions);
-  } else if (vBoard.flat().includes('')) {
-    turnPlayer = turnPlayer === 'playerOne' ? 'playerTwo' : 'playerOne'
+  } else if (virtualBoard.flat().includes('')) {
+    player = player === 'playerOne' ? 'playerTwo' : 'playerOne'
     updateTitle()
   } else {
-    document.querySelector('h2').innerHTML = 'Empate!'
+    document.querySelector('#players-turn').innerHTML = 'Empate!'
   }
 };
 
@@ -59,4 +64,7 @@ function getWinRegions() {
     winRegions.push("0.2", "1.1", "2.0");
   return winRegions
 };
+
+const startGameBtn = document.querySelector(`#start-game-btn`);
+startGameBtn.addEventListener(`click`, beginGame);
 

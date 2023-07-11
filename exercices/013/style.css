@@ -64,6 +64,10 @@ body {
   color: black;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 #board span.win {
   background-color: #25a340;
 }

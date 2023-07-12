@@ -11,6 +11,7 @@ function updateTitle() {
 }
 
 function initializeGame() {
+  
   // Inicializa as variáveis globais 
     vBoard = [['', '', ''], ['', '', ''], ['', '', '']]
     turnPlayer = 'player1'
@@ -25,6 +26,7 @@ function initializeGame() {
     element.addEventListener('click', handleBoardClick)
     })
 }
+
 // Verifica se existem três regiões iguais em sequência e devolve as regiões
 function getWinRegions() {
     const winRegions = []
@@ -46,11 +48,13 @@ function getWinRegions() {
     winRegions.push("0.2", "1.1", "2.0")
     return winRegions
 }
+
 // Desabilita uma região do tabuleiro para que não seja mais clicável
 function disableRegion(element) {
     element.classList.remove('cursor-pointer')
     element.removeEventListener('click', handleBoardClick)
 }
+
 // Pinta as regiões onde o jogador venceu e mostra seu nome na tela
 function handleWin(regions) {
     regions.forEach(function (region) {
@@ -91,5 +95,6 @@ function handleBoardClick(ev) {
     document.querySelector('h2').innerHTML = 'Empate!'
     }
 }
+
 // Adiciona o evento no botão que inicia o jogo
 document.getElementById('start').addEventListener('click', initializeGame)

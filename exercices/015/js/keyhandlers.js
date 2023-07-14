@@ -1,11 +1,12 @@
 // handle key events module
 
-import {calculate} from "./js/calculate.js";
+import { calculate } from "./calculate.js";
+export { handleKeyEvents, handleClearEvent, handleTyping };
 
-const input = document.getElementById("input");
+const input = document.querySelector("#input");
 
-function handleKeyEvents(){
-    const value = charKeyBtn.dataset.value;
+function handleKeyEvents(ev){
+    const value = ev.currentTarget.dataset.value;
     input.value += value;
 };
 
@@ -28,5 +29,3 @@ function handleTyping(ev) {
     calculate();
   }
 };
-
-export {handleKeyEvents, handleClearEvent, handleTyping};

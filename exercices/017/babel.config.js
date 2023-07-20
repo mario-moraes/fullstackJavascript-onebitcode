@@ -1,4 +1,4 @@
-// babel.config.js
+// babel.config.js file name
 
 module.exports = {
   presets: [

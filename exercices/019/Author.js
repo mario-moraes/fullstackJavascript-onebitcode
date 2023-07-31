@@ -1,11 +1,15 @@
-class Author{
-  constructor(name, posts){
-    this.name = name,
-    this.posts = [posts]
-  }
-  createPost(){
-    const newPost = this.posts;
+const Post = require("./Post.js")
 
+class Author {
+  constructor(name){
+    this.name = name;
+    this.posts = [];
+  }
+  createPost(title, body){
+    const post = new Post(title, body, this); 
+    this.posts.push(post);
+    return post
   }
 }
-module.export = Author;
+
+module.exports = Author;

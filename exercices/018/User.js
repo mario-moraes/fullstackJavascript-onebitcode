@@ -1,9 +1,9 @@
 // OOP fundamentals exercice
 class User {
   constructor(fullname, email, password) {
-    this.fullname = fullname,
-    this.email = email,
-    this.password = password
+    this.fullname = fullname;
+    this.email = email;
+    this.password = password;
   }
   login(email, password) {
     if (email === this.email && password === this.password) {

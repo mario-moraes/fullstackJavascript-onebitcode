@@ -1,13 +1,13 @@
 // OOP fundamentals exercice
 class Product {
   constructor(name, description, price) {
-    this.name = name,
-    this.description = description,
-    this.price = price,
-    this.inStock = 0
+    this.name = name;
+    this.description = description;
+    this.price = price;
+    this.inStock = 0;
   }
   addToStock(quantity){
-    this.inStock += quantity
+    this.inStock += quantity;
   }
   calculateDiscount(percentage) {
     const discountValue = this.price * (percentage / 100);

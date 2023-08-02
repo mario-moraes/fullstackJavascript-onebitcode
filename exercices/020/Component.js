@@ -1,21 +1,26 @@
 // oop and DOM manipulation exercice
-
 class Component {
-  #createdElement
-  constructor(element) {
-    this.createdElement = build(element);
-    this.#createdElement = createdElement;
+  #element = null;
+  
+  constructor(tag, parent, options) {
+    this.tag = tag;
+    this.parent = parent;
+    this.options = options;
+    this.build();
   }
-  build(element) {
-    const createdElement = document.createElement(element);
-    return createdElement
+  getElement() {
+    return this.#element
   }
-  render(fatherElement) {
-    fatherElement.appendChild(this.createdElement);
+  build() {
+    this.#element = document.createElement(this.tag);
+    Object.assign(this.#element, this.options);
+    return this
   }
-  getComponent() {
-    console.log(this.#createdElement);
+  render() {
+    if (this.parent instanceof Component) {
+      this.parent.getElement().append(this.#element);
+    } else {
+      document.querySelector(this.parent).append(this.#element);
+    }
   }
 }
-
-

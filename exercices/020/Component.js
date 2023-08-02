@@ -1,5 +1,5 @@
 // oop and DOM manipulation exercice
-class Component {
+export class Component {
   #element = null;
   
   constructor(tag, parent, options) {

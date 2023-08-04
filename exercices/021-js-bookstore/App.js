@@ -30,6 +30,9 @@ module.exports = class App {
   addBook(bookName, quantity) {
     App.#database.addBookToStock(bookName, quantity);
   }
+  getBooks() {
+    return App.#database.find("books");
+  }
   createPoster(name, description, height, width, price, inStock) {
     const poster = new Poster(name, description, height, width, price, inStock);
     App.#database.savePoster(poster); 

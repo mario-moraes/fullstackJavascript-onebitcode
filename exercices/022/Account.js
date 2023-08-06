@@ -16,11 +16,11 @@ module.exports = class Account {
     return this.#balance
   }
   addDeposit(deposit) {
-    this.#balance =+ deposit.value;
+    this.#balance += deposit.value;
     this.deposits.push(deposit);
   }
   addLoan(loan) {
-    this.#balance += loan.value;
+    this.#balance =+ loan.value;
     this.loans.push(loan);
   }
   addTransfer(transfer) {

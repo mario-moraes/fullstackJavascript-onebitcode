@@ -8,7 +8,9 @@ module.exports = class App {
   static #users = [];
 
   static findUser(email) {
-    const user = this.#users.find((user) => user.email === email);
+    const user = this.#users.find((user) => {
+      user.email === email
+    });
     return user ?? null
   }
   

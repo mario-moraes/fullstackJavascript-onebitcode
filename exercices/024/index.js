@@ -1,0 +1,2 @@
+// practicing Promises on javascript
+

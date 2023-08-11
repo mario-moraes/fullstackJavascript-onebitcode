@@ -44,12 +44,12 @@ function renderTransaction(transaction) {
 }
 
 async function fetchTransactions() {
-  return await fetch("http://localhost:3000/transactions").then((res) => {res.json()})
+  return await fetch("http://localhost:3000/transactions").then((res) => res.json())
 }
 
 function updateBalance() {
-  const balanceSpan = document.querySelector("balance");
-  const balance = transactions.reduce((sum, transaction) => {sum + transaction.amount}, 0);
+  const balanceSpan = document.querySelector("#balance");
+  const balance = transactions.reduce((sum, transaction) => sum + transaction.amount, 0);
   const formater = Intl.NumberFormat("pt-BR", {
     compactDisplay: "long",
     currency: "BRL",

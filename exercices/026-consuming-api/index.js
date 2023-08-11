@@ -46,13 +46,30 @@ function createdEditTransactionBtn(transaction) {
   return editBtn
 }
 
+function createDeleteTransactionBtn(id) {
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("delete-btn");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.addEventListener('click', async () => {
+    await fetch(`http://localhost:3000/transactions/${id}`, {
+      method: "DELETE"
+    });
+    deleteBtn.parentElement.remove();
+    const indexToRemove = transactions.findIndex((transaction) => transaction.id === id);
+    transactions.splice(indexToRemovem, 1);
+    updateBalance();
+  });
+  return deleteBtn
+}
+
 function renderTransaction(transaction) {
   const container = createTransactionContainer(transaction.id);
   const title = createTransactionTitle(transaction.name);
   const amount = createTransactionAmount(transaction.amount);
   const editBtn = createdEditTransactionBtn(transaction);
+  const deleteBtn = createDeleteTransactionBtn(transaction.id);
 
-  container.append(title, amount, editBtn);
+  container.append(title, amount, editBtn, deleteBtn);
   document.querySelector("#transactions").append(container);
 }
 

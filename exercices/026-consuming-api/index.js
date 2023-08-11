@@ -34,13 +34,27 @@ function createTransactionAmount(amount) {
   return span
 }
 
+function createdEditTransactionBtn(transaction) {
+  const editBtn = document.createElement("button");
+  editBtn.classList.add("edit-btn");
+  editBtn.textContent = "Edit";
+  editBtn.addEventListener("click", () => {
+    document.querySelector("#id").value = transaction.id;
+    document.querySelector("#name").value = transaction.name;
+    document.querySelector("#amount").value = transaction.amount;
+  });
+  return editBtn
+}
+
 function renderTransaction(transaction) {
   const container = createTransactionContainer(transaction.id);
   const title = createTransactionTitle(transaction.name);
   const amount = createTransactionAmount(transaction.amount);
+  const editBtn = createdEditTransactionBtn(transaction);
 
-  container.append(title, amount);
+  container.append(title, amount, editBtn);
   document.querySelector("#transactions").append(container);
+
 }
 
 async function saveTransaction(ev) {

@@ -54,29 +54,51 @@ function renderTransaction(transaction) {
 
   container.append(title, amount, editBtn);
   document.querySelector("#transactions").append(container);
-
 }
 
 async function saveTransaction(ev) {
-  ev.preventDefault()
+  ev.preventDefault();
+
+  const id = document.querySelector("#id").value;
   const name = document.querySelector("#name").value;
   const amount = parseFloat(document.querySelector("#amount").value);
-  const response = await fetch("http://localhost:3000/transactions", {
-    method: "POST",
-    body: JSON.stringify({
-      name, 
-      amount
-    }),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  });
-  const transaction = await response.json();
-  transactions.push(transaction);
-  renderTransaction(transaction);
   
-  ev.target.reset();
-  updateBalance();
+  if (id) {
+    // edit transaction
+    const response = await fetch(`http://localhost:3000/transactions/${id}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        name, amount
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    const transaction = await response.json();
+    const indexToRemove = transactions.findIndex((transaction) => transaction.id === id);
+    transactions.splice(indexToRemove, 1, transaction);
+    document.querySelector(`#transaction-${id}`).remove();
+    renderTransaction(transaction);
+  } 
+  else {
+    // create new transaction
+    const response = await fetch("http://localhost:3000/transactions", {
+      method: "POST",
+      body: JSON.stringify({
+        name, 
+        amount
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    const transaction = await response.json();
+    transactions.push(transaction);
+    renderTransaction(transaction);
+    
+    ev.target.reset();
+    updateBalance();
+  }
 }
 
 async function fetchTransactions() {

@@ -43,3 +43,4 @@ function sendInMission(spaceship: {name: string, crewLimit: number, crew: string
     alert(`${spaceship.name} authorized and dispatched for mission.`)
   }
 }
+

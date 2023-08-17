@@ -59,6 +59,54 @@ async function showUser(username: string) {
         Stars: ${repo.stargazers_count}
         Is a fork: ${repo.fork ? 'Yes' : 'No'}`
     })
-    alert(message);
+    console.log(message);
   }
 }
+
+function showAllUsers() {
+  let message = `Users:\n`;
+  users.forEach((user) => {
+    message += `\n- ${user.login}`
+  });
+  console.log(message);
+}
+
+function showReposTotal() {
+  const reposTotal = users.reduce((acc, user) => {
+    return acc + user.public_repos
+  }, 0);
+  console.log(`The group has a total of ${reposTotal} public repositories`);
+}
+
+function showTopFive() {
+  const topFive = users.slice().sort((a, b) => {
+    return b.public_repos - a.public_repos
+  }).slice(0,5);
+
+  let message = `Top 5 users with more public repositores: \n`
+
+  topFive.forEach((user, index) => {
+    return message += `\n${index+1} - ${user.login}: ${user.public_repos}`
+  });
+  console.log(message);
+}
+
+// testing
+
+async function main() {
+  await fetchUser('isaacpontes')
+  await fetchUser('julianaconde')
+  await fetchUser('pcaldass')
+  await fetchUser('lucasqueirogaa')
+  await fetchUser('frans203')
+  await fetchUser('LeDragoX')
+
+  await showUser('isaacpontes')
+  await showUser('julianaconde')
+
+  showAllUsers()
+  showReposTotal()
+  showTopFive()
+}
+
+main()

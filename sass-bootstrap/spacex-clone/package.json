@@ -1,0 +1,16 @@
+{
+  "name": "spacex-clone",
+  "version": "1.0.0",
+  "description": "Building up an SpaceX website clone for SASS and Bootstrap practice.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss:./css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.1",
+    "sass": "^1.66.1"
+  }
+}

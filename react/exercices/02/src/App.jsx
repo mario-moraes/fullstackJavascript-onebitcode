@@ -1,7 +1,10 @@
-function App() {
+import Card from "./components/Card"
+
+export default function App() {
   return (
-    <div className="app">
-      
+    <div>
+      <Card />
     </div>
   )
 }
+

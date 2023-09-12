@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Input } from "./components/Input"
 
 function App() {
   const [password, setPassword] = useState("");
@@ -29,13 +30,7 @@ function App() {
       <div>
         <label 
           htmlFor="passwordSize">Password length:</label>
-        <input 
-          type="number" 
-          id="passwordSize" 
-          min={1}
-          value={passwordSize}
-          onChange={(ev) => setPasswordSize(ev.target.value)}
-        />
+          <Input passwordSize={passwordSize} setPasswordSize={setPasswordSize} />
       </div>
       <button
         onClick={generatePassword}>Generate a password with {passwordSize} characters

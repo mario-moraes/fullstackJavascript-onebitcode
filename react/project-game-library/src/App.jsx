@@ -13,14 +13,17 @@ export default function App() {
         addGame={addGame}
       />
       <div className="games">
-        {games.map((game) => (
-          <Game 
-            key={game.id}
-            title={game.title}
-            cover={game.cover}
-            onRemove={() => removeGame(game.id)}
-          />
-        ))}
+        {
+        (games.length > 0) 
+        ? (games.map((game) => (
+            <Game 
+              key={game.id}
+              title={game.title}
+              cover={game.cover}
+              onRemove={() => removeGame(game.id)}
+            />)))
+        : (<h3>It seems that your library is empty!</h3>)
+        }
       </div>
     </div>
   )

@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function App() {
   const [author, setAuthor] = useState("");
   const [content, setContent] = useState(""); 
+  const [comments, setComments] = useState([]);
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -12,7 +13,7 @@ export default function App() {
       content,
       createdAt: new Date()
     }
-    console.log(newComment);
+    setComments((currentState) => [newComment, ...currentState]);
     setAuthor("");
     setContent("");
   }
@@ -42,11 +43,17 @@ export default function App() {
       </form>
       <hr />
       <section id="comments">
-        <div>
-          <h3>author@email.com</h3>
-          <span>Published 01/01/2023</span>
-          <p>Example comment</p>
-        </div>
+        { comments.length > 0 
+          ? 
+          comments.map((comment) => (
+              <div key={comment.id}>
+                <h3>{comment.author}</h3>
+                <span>{comment.createdAt.toLocaleString()}</span>
+                <p>{comment.content}</p>
+              </div>))
+          : 
+          <p>Be the first to comment!</p>
+        }
       </section>
     </div>
   )

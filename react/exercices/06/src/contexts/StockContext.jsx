@@ -24,6 +24,16 @@ export function StockContextProvider({children}) {
     })
   }
 
+  const updateItem = (itemId, newAttributes) => {
+    setItems((currentState) => {
+      const itemIndex = currentState.findIndex((item) => item.id === +itemId)
+      const updatedItems = [...currentState]
+      Object.assign(updatedItems[itemIndex], newAttributes, { updatedAt: new Date() })
+      localStorage.setItem("obc-react-stock", JSON.stringify(updatedItems))
+      return updatedItems
+    })
+  }
+
   const deleteItem = (itemId) => {
     setItems((currentState) => {
       const updatedItems = currentState.filter((item) => item.id !== itemId);
@@ -40,6 +50,7 @@ export function StockContextProvider({children}) {
     items,
     addItem,
     getItem,
+    updateItem,
     deleteItem
   }
 

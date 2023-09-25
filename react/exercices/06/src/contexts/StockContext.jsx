@@ -31,10 +31,15 @@ export function StockContextProvider({children}) {
       return updatedItems
     }) 
   }
+
+  const getItem = (itemId) => {
+    return items.find((item) => item.id === +itemId)
+  }
   
   const stock = {
     items,
     addItem,
+    getItem,
     deleteItem
   }
 

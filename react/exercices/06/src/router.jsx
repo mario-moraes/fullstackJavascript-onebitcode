@@ -19,7 +19,7 @@ const router = createBrowserRouter([{
       children: [
         {index: true, element: <ListItems />},
         {path: "new", element: <CreateItem />},
-        {path: "id", element: <ShowItem />},
+        {path: ":id", element: <ShowItem />},
         {path: ":id/update", element: <UpdateItem />}
       ]
     }

@@ -16,7 +16,8 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       staticData
-    }
+    },
+    revalidate: 10 //use revalidate to mitigate the need of a new build to update an static page
   }
 }
 

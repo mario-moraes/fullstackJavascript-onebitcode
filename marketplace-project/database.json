@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Macbook Air",
+    "description": "A power in the air. Apple's M1 chip has revolutionized our thinnest and lightest notebook. The CPU and GPU are faster, up to 3.5 times and up to five times, respectively. Our advanced Neural Engine makes machine learning up to nine times faster. The battery offers more battery life. And we exchange the fan for silence. Never has so much performance been packed into a MacBook Air.",
+    "price": 12508.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-card-40-macbook-air-202110?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1633726242000",
+    "inStock": 50
+  },
+  {
+    "id": 2,
+    "name": "Macbook Pro",
+    "description": "Pure power for professionals. The most powerful MacBook Pro ever has arrived. With the ultra-fast M1 Pro or M1 Max, Apple's first chips made for professionals, the new MacBook Pro delivers revolutionary performance and impressive battery life. Add to that a stunning Liquid Retina XDR display, the best camera and audio system in a Mac notebook, and all the ports you could want. It is different from anything that came before. And it is a phenomenon.",
+    "price": 25979.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-card-40-macbook-pro-14-202110?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1633726243000",
+    "inStock": 50
+  },
+  {
+    "id": 3,
+    "name": "iMac 24 inch.",
+    "description": "Say hello to the new iMac. Inspired by the best Apple has to offer and elevated to the power of the M1 chip. It looks beautiful anywhere. And it fits perfectly into your life.",
+    "price": 16934.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-card-40-imac-24-202108?wid=600&hei=500&fmt=jpeg&qlt=95&.v=1625868688000",
+    "inStock": 50
+  },
+  {
+    "id": 4,
+    "name": "Mac mini",
+    "description": "New inside. Remarkable throughout. Apple's M1 chip takes our most versatile and multifunctional desktop to a new dimension. CPU performance is up to three times better, GPU performance is up to six times faster, and our advanced Neural Engine makes machine learning up to 15 times faster. Now you can work, play and create on your Mac mini with speed and power you never imagined.",
+    "price": 8370.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-card-40-mac-mini-202108?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1626106830000",
+    "inStock": 50
+  },
+  {
+    "id": 5,
+    "name": "iPhone 13 Pro",
+    "description": "New, dramatically more powerful camera system. Responsive screen that surprises with every touch. The fastest smartphone chip in the world. Design with outstanding resistance. And a huge jump in battery life. It's Pro and that's it.",
+    "price": 9176.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone13pro-202203?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1644989935267",
+    "inStock": 50
+  },
+  {
+    "id": 6,
+    "name": "iPhone 13",
+    "description": "Our most advanced dual camera system to date. Durability front, middle and edge to edge. A chip with impressive speed. Everything you do gets faster. A noticeable increase in battery life. iPhone 13 Your new superpower.",
+    "price": 7599.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone13-202203?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1646335268199",
+    "inStock": 50
+  },
+  {
+    "id": 7,
+    "name": "iPhone SE",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "price": 4199.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphonese-202203?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1646415838921",
+    "inStock": 50
+  },
+  {
+    "id": 8,
+    "name": "iPhone 12",
+    "description": "Quickly, it's beautiful. Super powerful chip, 5G speed, advanced dual camera system, Ceramic Shield front, more resistant than any smartphone glass and a bright and colorful OLED screen. The iPhone 12 comes with everything — in two ideal sizes.",
+    "price": 5505.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone12purple-202109?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1646335268265",
+    "inStock": 50
+  },
+  {
+    "id": 9,
+    "name": "iPhone 11",
+    "description": "6.1-inch Liquid Retina HD display. Dual camera system with Night mode, Portrait mode and 4K video up to 60 fps. Front 12 MP TrueDepth camera with Portrait mode, 4K video and slow motion. A13 Bionic chip with Neural Engine. Face ID for secure authentication and Apple Pay",
+    "price": 4999.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone-11-202108?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1646502984732",
+    "inStock": 50
+  },
+  {
+    "id": 10,
+    "name": "iPad Pro",
+    "description": "The ultimate iPad experience. Now with the outstanding performance of the M1 chip, a stunning XDR screen and ultra-fast 5G cellular connection. Get ready.",
+    "price": 10391.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipadpro11-digitalmat-gallery-1-202111_GEO_BR?wid=600&hei=500&fmt=png-alpha&.v=1635806350000",
+    "inStock": 50
+  },
+  {
+    "id": 11,
+    "name": "iPad Air",
+    "description": "Color and power in the air. Apple's powerful M1 chip is here. 12 MP ultra-wide front camera with Center Stage. Ultrafast 5G. Compatible with Apple Pencil and Magic Keyboard. Five beautiful colors.",
+    "price": 6799.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-card-40-air-202203?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1644963446761",
+    "inStock": 50
+  },
+  {
+    "id": 12,
+    "name": "iPad",
+    "description": "Full of power. Easy to use. Versatile. The new iPad is built to do everything you love. Work, play, create, learn, connect and go beyond. All this for less than you imagine.",
+    "price": 3848.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-card-40-ipad-202109?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1630640992000",
+    "inStock": 50
+  },
+  {
+    "id": 13,
+    "name": "iPad mini",
+    "description": "New all-screen design. The powerful A15 Bionic chip. Ultrafast 5G. Apple Pencil support. In four colors that you will really want. Incredible as he is.",
+    "price": 5695.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-card-40-ipad-mini-202109?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1630457637000",
+    "inStock": 50
+  },
+  {
+    "id": 14,
+    "name": "Apple Watch Series 7",
+    "description": "Screen in sight. The largest and most advanced screen to date. The toughest Apple Watch ever. Revolutionary innovations for your health. Recharge up to 33% faster. Aluminum boxes in five colors.",
+    "price": 5099.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-s7-digitalmat-gallery-1-202203_GEO_BR?wid=600&hei=500&fmt=png-alpha&.v=1646033514786",
+    "inStock": 50
+  },
+  {
+    "id": 15,
+    "name": "Apple Watch SE",
+    "description": "It's a lot of Apple Watch for less. Powerful features to help you lead a more connected, active, healthy and safe life. Advanced sensors to track your activities and record your favorite workouts. And with a cellular connection, you can go out without your phone1. The Apple Watch SE has a lot to like for less than you might think.",
+    "price": 3655.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-card-40-se-202203_GEO_BR?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1646239532017",
+    "inStock": 50
+  },
+  {
+    "id": 16,
+    "name": "Apple Watch Nike",
+    "description": "Made for you to move. Apple Watch Nike with the Nike Run Club app is your ultimate running partner. The new Nike dial moves with you. Pace charts and streaks now appear directly in the Nike Run Club app. And that's just the beginning. Apple Watch Nike has a wealth of features to help you improve your workouts, times and runs. Available on Apple Watch Series 7 and Apple Watch SE models",
+    "price": 5099.00,
+    "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-nike-s7-digitalmat-gallery-1-202203_GEO_BR?wid=600&hei=500&fmt=png-alpha&.v=1646429070532",
+    "inStock": 50
+  }
+]

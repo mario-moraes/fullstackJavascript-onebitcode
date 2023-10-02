@@ -7,16 +7,21 @@ import ProductDetails from "../../../src/components/ProductDetails";
 import { fetchProduct, fetchProducts, ProductType } from "../../../src/services/products";
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const id = context.params?.id
+  const id = context.params?.id;
 
   if (typeof id === 'string') {
-    const product = await fetchProduct(id)
+    const product = await fetchProduct(id);
 
-    return { props: { product }, revalidate: 10  }
+    if (!product) {
+      return { notFound: true };
+    }
+
+    return { props: { product }, revalidate: 10 };
   }
 
-  return { redirect: { destination: '/products', permanent: false } }
-}
+  return { redirect: { destination: '/products', permanent: false } };
+};
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const products = await fetchProducts()
